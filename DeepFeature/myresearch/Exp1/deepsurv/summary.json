@@ -1,0 +1,44 @@
+{
+  "exp_id": "A1",
+  "method": "Pure Feature Extraction (Phase3 ResNet10, fc removed) + DeepSurv",
+  "input": "CT+EDT (2-channel)",
+  "mean_uno": 0.5777086237591069,
+  "std_uno": 0.05307010658597242,
+  "folds": [
+    {
+      "fold": 0,
+      "best_uno": 0.6028376742414007,
+      "tau": 1291.4
+    },
+    {
+      "fold": 1,
+      "best_uno": 0.654865264330151,
+      "tau": 1195.2000000000003
+    },
+    {
+      "fold": 2,
+      "best_uno": 0.5226974096578108,
+      "tau": 1237.2
+    },
+    {
+      "fold": 3,
+      "best_uno": 0.5376784488867029,
+      "tau": 1241.6000000000001
+    },
+    {
+      "fold": 4,
+      "best_uno": 0.570464321679469,
+      "tau": 1214.0000000000002
+    }
+  ],
+  "corrections_applied": [
+    "backbone.fc = Identity() for pure features",
+    "Single standardization (no double scaling)",
+    "Stable Cox loss (Breslow ties, time-sorted)",
+    "Use log_hazard directly (monotone-invariant)",
+    "inference_mode() for efficiency",
+    "Tau bounded by max_followup",
+    "Phase3 fold indices regenerated (SEED=42, matching Phase3)",
+    "Random seed fixed (42, matching Phase3)"
+  ]
+}
