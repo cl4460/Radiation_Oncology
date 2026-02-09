@@ -1,0 +1,35 @@
+================================================================================
+AUTHORITATIVE VERSION LOCK - classwise_conformal.py
+================================================================================
+
+This file locks the ONLY valid version of the evaluation script for paper results.
+
+Git Commit: 2184ae5500ed9921ecb54427e8c9fbecfa9a6a8a
+Date: 2026-02-10 05:34:33 +0800
+Branch: main
+
+CRITICAL FIXES APPLIED (P0):
+1. Baseline marginal_cov: accuracy (NOT hardcoded 1.0)
+2. Statistical terminology: "repeated random split" (NOT "bootstrap")
+3. Sanity check: all invariants verified
+
+VERIFICATION STATUS:
+✓ Sanity check passed (sanity_check_conformal.py)
+✓ Prob threshold: marginal_cov == accuracy
+✓ All coverage metrics in [0, 1]
+✓ No NaN in critical metrics
+
+USAGE:
+- All paper results MUST use this version
+- Any output MUST include this commit hash
+- NO other versions are valid
+
+REPRODUCIBILITY:
+To verify this version:
+  cd /home/lichengze/Research
+  git checkout 2184ae5500ed9921ecb54427e8c9fbecfa9a6a8a
+  python M3_x1_v5_final/sanity_check_conformal.py
+
+If sanity check fails, DO NOT use any results.
+
+================================================================================
