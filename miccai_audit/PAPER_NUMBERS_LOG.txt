@@ -1,0 +1,69 @@
+================================================================================
+PAPER ARTIFACTS GENERATION
+================================================================================
+
+[1/5] Regenerate Table 1
+       model    n  events      pi  ...   brier  brier_clim   skill     ece
+0  Radiomics  123      28  0.2276  ...  0.1712      0.1758  0.0261  0.0491
+1   Clinical  123      28  0.2276  ...  0.2990      0.1758 -0.7004  0.3553
+
+[2 rows x 11 columns]
+
+Saved: paper_tables/table1_external_audit.csv
+
+[2/5] Reversal frequency (Standard CP)
+================================================================================
+REVERSAL FREQUENCY ANALYSIS
+================================================================================
+
+Alpha = 0.05:
+  Repeats: 500
+  Raw: Clinical higher in 78.8% of splits
+  CalOnly: Clinical higher in 8.4% of splits
+  Reversal frequency: 77.2%
+  Median Δ(defer): Raw=0.048, Cal=-0.177
+  ✓ Saved: exp7c_v2_CLEAN_123_alpha0p05/reversal_frequency_standard.csv
+
+Alpha = 0.10:
+  Repeats: 500
+  Raw: Clinical higher in 97.8% of splits
+  CalOnly: Clinical higher in 31.4% of splits
+  Reversal frequency: 66.8%
+  Median Δ(defer): Raw=0.339, Cal=-0.048
+  ✓ Saved: exp7c_v2_CLEAN_123_alpha0p10/reversal_frequency_standard.csv
+
+Alpha = 0.20:
+  Repeats: 500
+  Raw: Clinical higher in 100.0% of splits
+  CalOnly: Clinical higher in 51.4% of splits
+  Reversal frequency: 48.6%
+  Median Δ(defer): Raw=0.597, Cal=0.016
+  ✓ Saved: exp7c_v2_CLEAN_123_alpha0p20/reversal_frequency_standard.csv
+
+[3/5] Floor overlay figure
+================================================================================
+CREATING DISCRIMINATION FLOOR WITH REAL MODEL OVERLAY
+================================================================================
+
+Floor simulation: 8 AUC points
+  AUC range: 0.60 to 0.95
+
+Real model points (from exp7c, alpha=0.10, Classwise):
+  Radiomics: AUC=0.618, defer=0.824
+  Clinical:  AUC=0.689, defer=0.763
+
+✓ Saved: paper_figs/fig_floor_overlay.png
+✓ Saved: paper_tables/real_model_floor_points.csv
+
+[4/5] Reversal evidence figure (if exists)
+  (Script not found, skipping)
+
+[5/5] Sanity summary from master cohort
+================================================================================
+MASTER CHECK: n=123 events=28 pi=0.2276
+Radiomics: mean_p=0.2604 overest=1.14x AUC=0.6180 Brier=0.1712
+================================================================================
+
+================================================================================
+DONE. All paper artifacts generated.
+================================================================================
